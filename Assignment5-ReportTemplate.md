@@ -14,9 +14,26 @@ This lab consists of analyzing test data through reliability assessment tools. W
 # 
 
 # Assessment Using Reliability Growth Testing 
+![](./media/RGT1.png)
+C-SFRAT allowed us to compare the various sequence models with the Model Comparison feature where we could view how each model fit with the failure data. This is how we decided on the two best models. This figure displays the correspondence of the test data to a geometric model in reference to the computational failure time. It follows that the provided failure data is tracked fairly well by a geometric sequence of the computational model. It is apparent in the following diagrams that the sequence models selected sequence models (geometric and IFR generalized Salvia and Bollinger) resemble the data failure rate when they are calculated in reference to all three parameters. 
 
+![](./media/RGT2.png)
+This figure demonstrates the correlation between the data set and two sequence models referencing the execution time between each failure. Again, the sequence models are the geometric model and the IFR generalized Salvia and Bollinger. Both sequence models are very similar, however, they slightly differ between intervals 2 to 10, and 22 to 26. In the lower range, the geometric model tracks the data failure slightly better than the IFRGSB model. In the upper interval, the opposite is true. 
+
+![](./media/RGT3.png)
+This figure models the data failure rate with our selected sequence models using the physical time between intervals as the parameter. This parameter models the data failure rate the best with these selected models. From the graph, it can be seen that the models are most similar at higher intervals, however, they all follow the similar trend. 
+
+![](./media/RGT4.png)
+This is a final graph we created reflecting the trend from all three parameters. Similar to all three graphs before this, the sequence models closely reflect the failure rate from the provided data at higher intervals (> 20) although the models only slightly resemble the failure data in the lower intervals, it is reasonable to expect refined performance at higher intervals in testing. Also, the sequence models are fairly accurate in intervals 8-14. This diagram depicts the average structure between the three parameters and thus reflects that the sequence models we chose are accurate, even though the models for particular parameters may not reflect as such.
 # Assessment Using Reliability Demonstration Chart 
+![](./media/RDC1.png)
+Assuming a developer and customer risk tolerance of 1 failure every 10 seconds, and a discrimination ratio of 2, this system will just be accepted with a failure intensity objective (FIO) of 3 failures per second. This means that if the customer and developer require the program to run with a maximum of 1 failure every 10 seconds. The discrimination ratio reflects the amount of error within this calculation is accepted. It directly correlates to the space between the acceptance line and the rejection line. So, for this software to be accepted by developers and customers, it must achieve an FIO of at least 3 failures per second. 
 
+![](./media/RDC2.png)
+This figure reflects the effect of cutting the FIO in half. Here, the failure data lies in the ‘continue’ portion of the graph, signifying that that with the specified FIO, the data does not pass or fail the risk requirements but rather is undetermined due to the permissible error established by the discrimination ratio. If the discrimination ratio was decreased, this failure data likely would be rejected.
+
+![](./media/RDC3.png)
+This RDC reflects the effect of doubling the FIO. Here, the failure intensity objective is 6, resulting in failure data that greatly exceeds the acceptance rate. As stated previously, a failure intensity objective greater than 3 would result in an accepted failure rate. So, an FIO of 6 surely exceeds developer and customer expectations. 
 # 
 
 # Comparison of Results
